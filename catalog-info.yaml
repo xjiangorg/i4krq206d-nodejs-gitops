@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: i4krq206d-nodejs-gitops
+  description: This is GitOps manifest for i4krq206d-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=i4krq206d-nodejs
+    backstage.io/kubernetes-id: i4krq206d-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: i4krq206d-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:i4krq206d-nodejs
